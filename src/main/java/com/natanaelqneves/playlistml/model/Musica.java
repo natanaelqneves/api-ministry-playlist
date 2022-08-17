@@ -3,36 +3,34 @@ package com.natanaelqneves.playlistml.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "tb_musicas")
 public class Musica {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "Nome da Musica",unique = true, nullable = false)
+    @Column(unique = true, nullable = false)
     private String nome;
 
-    @ManyToOne
-    @Column(name = "Cantor(a)", nullable = false)
-    private Cantor cantor;
-
-    @Column(name = "Cifras", nullable = false, length = 512)
+    @Column(name = "Cifras", unique = true, nullable = false, length = 512)
     private String cifra;
 
-    @Column(name = "Video", nullable = false, length = 512)
+    @Column(name = "Video", unique = true, nullable = false, length = 512)
     private String video;
 
+
+    //CONSTRUTORES
     public Musica() {
     }
 
-    public Musica(String nome, Cantor cantor, String cifra, String video) {
+    public Musica(String nome, String cifra, String video) {
         this.nome = nome;
-        this.cantor = cantor;
         this.cifra = cifra;
         this.video = video;
     }
 
+
+    //GETTERS E SETTERS
     public Integer getId() {
         return id;
     }
@@ -47,14 +45,6 @@ public class Musica {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public Cantor getCantor() {
-        return cantor;
-    }
-
-    public void setCantor(Cantor cantor) {
-        this.cantor = cantor;
     }
 
     public String getCifra() {
