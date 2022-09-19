@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <title>PLayList ML</title>
+  </head>
+  <body>
+    <div id="root" class="container">
+        <div class="titulo">Preencha todos os campos para adicionar musicas ao repertório</div>
+        <form action='https://ministryapp.herokuapp.com/add' method='POST' encType='application/x-www-form-unlencoded'>
+            <div class="entradas"> 
+                <div class="bloco">
+                    <label class="texto-entrada">Nome da Música:</label>
+                    <input class="entrada" type="text" name="nome" required placeholder="ex: Pode Morar Aqui"></input>
+                </div>
+                <div class="bloco">
+                    <label class="texto-entrada">Cifra Original</label>
+                    <input class="entrada" type="text" name="cifra" required placeholder="ex: cifraclub.com.br/theo-rubia/pode-morar-aqui/"></input>
+                </div>
+                <div class="bloco">
+                    <label class="texto-entrada">Vídeo do Youtube</label>
+                    <input class="entrada" type="text" name="video" required placeholder="ex: youtube.com/watch?v=n0fDvJAyrQ8"></input>
+                </div>           
+            </div>
+            <div class="botoes">
+                <a class="botao botoes" href="musicas.html">MUSICAS</a>
+                <button class="botao">SALVAR MÚSICA</button>
+            </div>
+        </form>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

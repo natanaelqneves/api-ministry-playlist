@@ -1,6 +1,7 @@
 package com.natanaelqneves.playlistml.model;
 
 import javax.persistence.*;
+import java.net.URL;
 
 @Entity
 public class Musica {

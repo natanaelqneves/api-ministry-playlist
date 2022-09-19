@@ -7,25 +7,27 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
+import java.net.MalformedURLException;
+
 @RestController
-@RequestMapping("/musicas")
+@RequestMapping("/")
 public class MusicaController {
 
     @Autowired
     private MusicaRepository musicaRepository;
 
     @PostMapping("/add")
-    public String newMusic(Musica musica){
+    public String newMusic(Musica musica) throws MalformedURLException {
         musicaRepository.save(musica);
         return musica.toString();
     }
 
-    @GetMapping
+    @GetMapping("/musicas")
     public Iterable<Musica> getMusics(Musica musica){
         return musicaRepository.findAll();
     }
 
-    @GetMapping(path = "/{nome}")
+    @GetMapping(path = "/musica/{nome}")
     public Iterable<Musica> getMusicasForName(@PathVariable String nome) {
         return musicaRepository.findByNomeIsContaining(nome);
     }
@@ -39,7 +41,7 @@ public class MusicaController {
         return musicaRepository.findAll(page);
     }
 
-    @DeleteMapping(path = "/{id}")//SOFT DELETE
+    @DeleteMapping(path = "/del/{id}")//SOFT DELETE
     public void delMusica(@PathVariable Integer id) {
         musicaRepository.deleteById(id);
     }
