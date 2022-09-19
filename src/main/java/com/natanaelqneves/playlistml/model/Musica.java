@@ -29,6 +29,12 @@ public class Musica {
         this.video = video;
     }
 
+    public Musica(Integer id, String nome, String cifra, String video) {
+        this.id = id;
+        this.nome = nome;
+        this.cifra = cifra;
+        this.video = video;
+    }
 
     //GETTERS E SETTERS
     public Integer getId() {
@@ -44,7 +50,7 @@ public class Musica {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.nome = nome.toUpperCase();
     }
 
     public String getCifra() {
@@ -61,5 +67,11 @@ public class Musica {
 
     public void setVideo(String video) {
         this.video = video;
+    }
+
+    @Override
+    public String toString() {
+        return "Música " + nome + "\n" +
+                "<iframe width=\"560\" height=\"315\" src=\" "+ getVideo() + " \" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe> ";
     }
 }

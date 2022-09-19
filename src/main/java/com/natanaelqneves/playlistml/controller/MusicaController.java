@@ -15,9 +15,9 @@ public class MusicaController {
     private MusicaRepository musicaRepository;
 
     @PostMapping("/add")
-    public Musica newMusic(Musica musica){
+    public String newMusic(Musica musica){
         musicaRepository.save(musica);
-        return musica;
+        return musica.toString();
     }
 
     @GetMapping
