@@ -71,7 +71,6 @@ public class Musica {
 
     @Override
     public String toString() {
-        return "Música " + nome + "\n" +
-                "<iframe width=\"560\" height=\"315\" src=\" "+ getVideo() + " \" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe> ";
+        return "Música " + nome + " adicionada";
     }
 }
